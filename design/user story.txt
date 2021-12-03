@@ -1,0 +1,10 @@
+User will be able to register an account with email, username, and passwords.
+User will be able to login to their account using username and password.
+User can play a single game mode of Madlibs (without affecting user's score).
+User can create an online game of Madlibs by creating a room.
+User can add a password to the room, and a player limit.
+In online games, user will submit words and each story will be displayed for each user in the game to see.
+User will vote for funniest story.
+User can earn points to the overall score based on performance.
+User can view overall leaderboards with points from everyone in the game.
+User can view match history.
