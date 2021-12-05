@@ -9,7 +9,36 @@ venv.bak/
 
 # Django stuff:
 *.log
-
-
-#cache files
+*.pot
+*.pyc
 __pycache__/
+local_settings.py
+
+
+#docker stuff
+.vagrant*
+bin
+docker/docker
+.*.swp
+a.out
+*.orig
+build_src
+.flymake*
+.idea
+.DS_Store
+docs/_build
+docs/_static
+docs/_templates
+.gopath/
+.dotcloud
+*.test
+bundles/
+.hg/
+.git/
+vendor/pkg/
+pyenv
+Vagrantfile
+*.yml
+data/
+
+secret.py
