@@ -40,5 +40,4 @@ pyenv
 Vagrantfile
 *.yml
 data/
-
-secret.py
+secrets.py
