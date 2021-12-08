@@ -5,4 +5,5 @@ from . import views
 # This file holds the URLs for the 'main' app
 urlpatterns = [
     path("", views.index, name="index"),
+    path("register/", views.register, name="register"),
 ]
