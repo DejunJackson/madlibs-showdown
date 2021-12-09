@@ -1,0 +1,13 @@
+{%extends "main/base.html"%}
+
+{%block title%} Madlibs Showdown {%endblock%}
+
+{%if user.is_authenticated%}
+{%block content%}
+   <h1>Logged In! {{user.username}}</h1>
+{%endblock%}
+{%else%}
+
+   <h1>You should probably Log in</h1>
+
+{%endif%}

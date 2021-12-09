@@ -40,4 +40,8 @@ pyenv
 Vagrantfile
 *.yml
 data/
+
+
 secrets.py
+.vscode/
+*.vscode

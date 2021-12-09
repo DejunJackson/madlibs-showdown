@@ -5,7 +5,11 @@ from django.urls import reverse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('<h1>Hello World!</h1>')
+    if request.user.is_authenticated:
+        user = request.user
+        return render(request, "main/index.html", {"user":user})
+    else:
+        return redirect("accounts/login")
 
 def register(request):
     form =RegisterForm(request.POST)
@@ -18,4 +22,4 @@ def register(request):
     else:
         form = RegisterForm()
 
-    return render(request, "main/register.html", {"form":form})
+    return render(request, "registration/register.html", {"form":form})
