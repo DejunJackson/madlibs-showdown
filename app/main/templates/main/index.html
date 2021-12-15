@@ -4,10 +4,13 @@
 
 {%if user.is_authenticated%}
 {%block content%}
-   <h1>Logged In! {{user.username}} {{user.password}} {{user.score}}  hi</h1>
+   <div class="d-flex justify-content-center">
+      <ul style="list-style-type: none;">
+         <li class="my-5"><a href="" class="menu-list"><h1>Single Player</h1></a></li>
+         <li class="my-5"><a href="" class="menu-list"><h1>Multiplayer</h1></a></li>
+         <li class="my-5"><a href="" class="menu-list"><h1>Leaderboards</h1></a></li>
+         <li class="my-5"><a href="" class="menu-list"><h1>Game History</h1></a></li>
+      </ul>
+   </div>
 {%endblock%}
-{%else%}
-
-   <h1>You should probably Log in</h1>
-
 {%endif%}
