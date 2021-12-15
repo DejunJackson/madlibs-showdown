@@ -4,7 +4,7 @@
 
 {%if user.is_authenticated%}
 {%block content%}
-   <h1>Logged In! {{user.username}}</h1>
+   <h1>Logged In! {{user.username}} {{user.password}} {{user.score}}  hi</h1>
 {%endblock%}
 {%else%}
 
