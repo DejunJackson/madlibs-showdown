@@ -1,0 +1,45 @@
+{%extends "main/base.html"%}
+
+{%block title%} Madlibs Showdown {%endblock%}
+
+{%if user.is_authenticated%}
+{%block content%}
+<div class="d-flex justify-content-center">
+    <h1>📜Leaderboards📜</h1>
+</div>    
+    <hr>
+<div class="d-flex justify-content-center">
+    
+  {%if players%}
+             <table style="width:100%">
+                <tr>
+                    <th><h1>Position</h1></th>
+                    <th><h1>Username</h1></th>
+                    <th><h1>Score</h1></th>
+                </tr>
+                {%for player in players%}
+                {%if player == user%}
+                <tr>
+                  <td><h1 style="color: red;">{{forloop.counter}}</h1></td>
+                  <td><h1 style="color: red;">{{player.username}}</h1></td>
+                  <td><h1 style="color: red;">{{player.score}}</h1></td>
+                </tr>
+                {%else%}
+                <tr>
+                    <td><h1>{{forloop.counter}}</h1></td>
+                    <td><h1>{{player.username}}</h1></td>
+                    <td><h1>{{player.score}}</h1></td>
+                  </tr>
+                {%endif%}
+                {%endfor%}
+                
+              </table>
+    {%else%}
+    <h1>No players</h1>
+    {%endif%}
+            
+</div>  
+{%endblock%}
+{%endif%}
+ 
+      
