@@ -15,9 +15,9 @@ This game will feature authentication, single player mode, multiplayer mode, a l
 ### General
 
 - [ ] Contact page
-- [ ] Navbar
-- [ ] Main Page
-- [ ] Style Main Page
+- [x] Navbar
+- [x] Main Page
+- [x] Style Main Page
 ---
 ### Database
 
@@ -32,12 +32,12 @@ This game will feature authentication, single player mode, multiplayer mode, a l
 
 - [x] Registration View
 - [x] Registration Template
-- [ ] Style Registration Template
+- [x] Style Registration Template
 ---
 ### Login
 
 - [x] Login Template
-- [ ] Style Login Template
+- [x] Style Login Template
 ---
 ### Single Player Mode
 
