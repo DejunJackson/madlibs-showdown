@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import RegisterForm
 from django.urls import reverse
-from .models import User
+from .models import User, Story
 # Create your views here.
 
 def index(request):
@@ -30,3 +30,9 @@ def leaderboards(request):
     user = request.user
     context = {'players': all_players, 'user': user}
     return render(request, 'main/leaderboards.html', context)
+
+def singleplayer(request):
+    all_stories = Story.objects.order_by('title')
+    user = request.user
+    context = {'stories': all_stories, 'user': user}
+    return render(request, 'main/singleplayer.html', context)

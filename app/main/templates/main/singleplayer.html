@@ -1,0 +1,19 @@
+{%extends "main/base.html"%}
+
+{%block title%} Madlibs Showdown {%endblock%}
+
+{%if user.is_authenticated%}
+{%block content%}
+   <div class="d-flex justify-content-center">
+       
+      <ul style="list-style-type: none;">
+        {%for story in stories%}
+         <li class="my-5"><h1>{{ story.title }}</h1></li>
+         <li class="my-5"><h1>{{ story.story_text }}</h1></li>
+         <li class="my-5"><h1>{{ story.questions }}</h1></li>
+         {%endfor%}
+      </ul>
+   </div>
+{%endblock%}
+{%endif%}
+
