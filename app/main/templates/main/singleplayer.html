@@ -4,16 +4,29 @@
 
 {%if user.is_authenticated%}
 {%block content%}
-   <div class="d-flex justify-content-center">
-       
-      <ul style="list-style-type: none;">
-        {%for story in stories%}
-         <li class="my-5"><h1>{{ story.title }}</h1></li>
-         <li class="my-5"><h1>{{ story.story_text }}</h1></li>
-         <li class="my-5"><h1>{{ story.questions }}</h1></li>
+<div class="d-flex justify-content-center">
+   <h1>Choose A Story</h1>
+</div>
+<hr>
+<div class="d-flex justify-content-center">
+   <div class="custom-control custom-checkbox">
+      <form action="/" class="form-group">
+         {%for story in stories%}
+         <input class="singleplayerinput" type="radio" name="flexRadioDefault" id="customRadio">
+         <label class="form-check-label" for="flexRadioDefault1">
+            <h1>{{ story.title }}</h1>
+         </label><br>
          {%endfor%}
-      </ul>
+         <input class="singleplayerinput" type="radio" name="flexRadioDefault" id="customRadio">
+         <label class="form-check-label" for="flexRadioDefault1">
+            <h1>Random</h1>
+         </label>
+         <br>
+         <button type="submit">Submit</button>
+      </form>
    </div>
+</div>
+
 {%endblock%}
 {%endif%}
 
