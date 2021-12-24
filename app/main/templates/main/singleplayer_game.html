@@ -3,21 +3,25 @@
 {%block title%} Madlibs Showdown {%endblock%}
 
 {%if user.is_authenticated%}
-{% load crispy_forms_tags %}
 {%block content%}
 <div class="d-flex justify-content-center">
    <h1>🖊️Fill Out Your Story🖊️</h1>
 </div>
 <hr>
 <div class="d-flex justify-content-center">
-      {% for question in story.questions %}
-      
-      <label class="form-check-label" for="flexRadioDefault1">
-         <h1>{{ question }}</h1>
-      </label>
-      <input class="singleplayerinput my-5 mx-5" type="text" name="flexRadioDefault" id="customRadio">
+    <form method="POST" action="/singleplayer/">
+        <div class="form-group">
+        {%csrf_token%}
+        {% for question in story.questions %}
+        <label class="form-check-label" for="flexRadioDefault1">
+            <h4>{{ question }}</h4>
+        </label>
+        <input class="form-control" type="text">
       <br>
-      {% endfor %}
+        {% endfor %}
+        </div>
+      <button type="submit" class="btn btn-primary btn-lg col-12">Submit Your Words</button>
+    </form>
 </div>
 {%endblock%}
 {%endif%}
