@@ -7,5 +7,5 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("register/", views.register, name="register"),
     path("leaderboards/", views.leaderboards, name="leaderboards"),
-    path("singleplayer/", views.singleplayer, name="singleplayer"),
+    path("singleplayer/", views.singleplayer_menu, name="singleplayer_menu"),
 ]
