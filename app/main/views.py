@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .forms import RegisterForm, SingleplayerForm
+from .forms import RegisterForm, SingleplayerForm, SingleplayerStoryForm
 from django.urls import reverse
 from .models import User, Story
 # Create your views here.
@@ -34,14 +34,22 @@ def leaderboards(request):
 def singleplayer_menu(request):
     
     if request.method == "POST":
-        story_choice = request.POST.get('story_choice')
-        story = Story.objects.get(title=story_choice)
-        return render(request, 'main/singleplayer_game.html', {'story': story})
+        print(request.POST)
+        story_form = request.POST.get('story_choice')
+        
+        form = SingleplayerStoryForm(story_form)
+        context = {'form': form}
+        return render(request, 'main/singleplayer_game.html', context)
           
     form = SingleplayerForm()
     user = request.user
     context = {'form': form, 'user': user}
     return render(request, 'main/singleplayer.html', context)
+
+def singleplayer_story(request):
+    # process story view
+
+    return render(request, 'main/singleplayer_story.html')
 
 
     
